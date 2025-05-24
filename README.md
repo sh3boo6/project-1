@@ -29,6 +29,8 @@ It aims to provide a simple and structured way to build PHP applications using:
 ---
 
 ## 🔧 Folder Structure | هيكل المجلدات
+
+```
 project-1/
 │
 ├── index.php          ← Router entry point
@@ -39,6 +41,7 @@ project-1/
 ├── api/               ← Optional API endpoints
 ├── src/               ← Helper functions or classes
 └── README.md          ← This file
+```
 ---
 
 ## 💻 Vue.js CDN Support | دعم Vue.js من خلال CDN
@@ -47,3 +50,14 @@ You can directly include Vue in your layout:
 
 ```html
 <script src="https://unpkg.com/vue@3"></script>
+```
+
+---
+
+## 🚀 How to Run | طريقة التشغيل
+
+Place the project in your local server directory (e.g., XAMPP `htdocs`)  
+and visit: `http://localhost/project-1`
+
+ضع المشروع داخل مجلد الخادم المحلي لديك (مثل `htdocs` في XAMPP)  
+ثم افتحه عبر المتصفح من خلال: `http://localhost/project-1`
