@@ -414,3 +414,28 @@ function abort($status = 403, $message = null) {
     include APP['root'] . '/pages/error.php';
     exit;
 }
+
+function readFromUploadsAsBase64($filePath) {
+
+    $filePath = APP['root'] . '/src/uploads/' . ltrim($filePath, '/');
+    if (!file_exists($filePath)) {
+        return null;
+    }
+    
+    $fileContent = file_get_contents($filePath);
+    if ($fileContent === false) {
+        return null;
+    }
+    
+    // Encode the file content to base64
+    //return base64_encode($fileContent);
+
+    return [
+        'filePath' => $filePath,
+        'base64' => base64_encode($fileContent),
+        'type' => mime_content_type($filePath),
+        'size' => round(filesize($filePath) / 1024, 2) . ' KB',
+        'name' => basename($filePath),
+        'url' => url('uploads/' . ltrim($filePath, '/'), [], true) // Generate absolute URL
+    ];
+}
