@@ -33,14 +33,14 @@ It aims to provide a simple and structured way to build PHP applications using:
 ```
 project-1/
 │
-├── index.php          ← Router entry point
-├── .htaccess          ← Apache rewrite rules
-├── pages/             ← Static and dynamic pages
-├── layouts/           ← Shared layout (e.g. header, footer)
-├── assets/            ← CSS, JS, images, fonts
-├── api/               ← Optional API endpoints
-├── src/               ← Helper functions or classes
-└── README.md          ← This file
+├── index.php          # Router entry point
+├── .htaccess          # Apache rewrite rules
+├── pages/             # Static and dynamic pages
+├── layouts/           # Shared layout (e.g. header, footer)
+├── assets/            # CSS, JS, images, fonts
+├── api/               # Optional API endpoints
+├── src/               # Helper functions or classes
+└── README.md          # This file
 ```
 ---
 
