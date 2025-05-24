@@ -14,10 +14,10 @@
         components: {
             'app-loading': Loading,
         },
-        
+
         data() {
             return {
-                
+                loading: true,
             };
         },
 
@@ -26,7 +26,9 @@
         },
 
         mounted() {
-            
+            setTimeout(() => {
+                this.loading = false;
+            }, 1000); // Simulate loading for 1 second
         }
     }).mount('#app');
 </script>
