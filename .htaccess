@@ -1,0 +1,52 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Set the base directory for the subdirectory
+RewriteBase /project-1/
+
+# Exclude existing files and directories from rewriting
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Allow access to the assets folder
+RewriteCond %{REQUEST_URI} ^/project-1/assets/ [NC]
+RewriteRule ^ - [L]
+
+# Remove the <Directory> directive and allow directory listing for assets/img
+RewriteCond %{REQUEST_URI} ^/project-1/assets/img/ [NC]
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_URI} ^/project-1/assets/css/ [NC]
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_URI} ^/project-1/assets/js/ [NC]
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_URI} ^/project-1/assets/fonts/ [NC]
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_URI} ^/project-1/assets/scss/ [NC]
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_URI} ^/project-1/assets/vendors/ [NC]
+RewriteRule ^ - [L]
+
+# Forward all other requests to index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# Prevent directory listing
+Options -Indexes
+
+# Set default index file
+DirectoryIndex index.php
+
+# PHP settings
+<IfModule mod_php.c>
+    php_value upload_max_filesize 20M
+    php_value post_max_size 20M
+    php_value max_execution_time 300
+    php_value max_input_vars 3000
+</IfModule>
