@@ -78,7 +78,7 @@
                                 <a href="<?= route('/') ?>" class="btn btn-primary btn-lg px-5 py-3 shadow-sm">
                                     <i class="bi bi-house-door-fill me-2"></i> Back to Home
                                 </a>
-                                <button onclick="window.history.back()" class="btn btn-outline-danger btn-lg px-5 py-3">
+                                <button onclick="window.history.back()" class="btn btn-outline-danger my-btn btn-lg px-5 py-3">
                                     <i class="bi bi-arrow-left me-2"></i> Go Back
                                 </button>
                             </div>

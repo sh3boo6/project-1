@@ -6,6 +6,10 @@
     <title><?= APP['name'] ?> <?= isset($title) ? ' | ' . $title : null ?></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.rtl.min.css" integrity="sha384-MdqCcafa5BLgxBDJ3d/4D292geNL64JyRtSGjEszRUQX9rhL1QkcnId+OT7Yw+D+" crossorigin="anonymous">
     
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="<?= asset('js/tailwindcss.js') ?>"></script>
+
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
@@ -300,5 +304,7 @@
             display: none !important;
         }
     </style>
+
+    <link rel="stylesheet" href="<?= asset('css/output.css') ?>">
     
 </head>

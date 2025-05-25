@@ -1,0 +1,28 @@
+{
+  "name": "project-1",
+  "version": "1.0.0",
+  "description": "This micro-framework is designed for **beginners** and **small projects (up to 50 pages)**.   It aims to provide a simple and structured way to build PHP applications using: - File-based routing via `pages/` folder - Optional use of Vue.js via CDN - Clean and organized folder structure",
+  "homepage": "https://github.com/sh3boo6/project-1#readme",
+  "bugs": {
+    "url": "https://github.com/sh3boo6/project-1/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sh3boo6/project-1.git"
+  },
+  "license": "ISC",
+  "author": "Mohammed Alomari",
+  "type": "commonjs",
+  "main": "src/js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "postcss src/css/input.css -o assets/css/output.css"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.3.5"
+  },
+  "devDependencies": {}
+}
