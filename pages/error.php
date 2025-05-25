@@ -35,34 +35,39 @@ switch($errorCode) {
 
 layout('start', ['title' => $errorCode . ' | ' . $errorTitle]);
 ?>
+<style>
+    .rotate--15 {
+        transform: rotate(-15deg);
+    }
+</style>
 <div id="app">
-    <div class="container">
+    <div class="container mx-auto">
         <main class="py-5">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="error-container p-5 my-5 bg-light rounded-3 shadow-lg position-relative overflow-hidden">
+            <div class="flex justify-center">
+                <div class="md:w-2/3">
+                    <div class="relative overflow-hidden my-5 p-5 bg-gray-100 rounded-lg shadow-2xl">
                         <!-- Animated element -->
-                        <div class="position-absolute" style="top: -15px; left: -15px; opacity: 0.15; transform: rotate(-15deg);">
-                            <span class="display-1 text-<?= $errorCode == 403 ? 'warning' : 'danger' ?>"><?= $errorCode ?></span>
+                        <div class="absolute -top-4 -left-4 opacity-20 rotate--15">
+                            <span class="text-8xl <?= $errorCode == 403 ? 'text-yellow-500' : 'text-red-500' ?>"><?= $errorCode ?></span>
                         </div>
                         
-                        <div class="position-relative">
+                        <div class="relative">
                             <!-- Main content -->
                             <div class="mb-5">
-                                <h1 class="display-4 fw-bold text-<?= $errorCode == 403 ? 'warning' : 'danger' ?> mb-2"><?= $errorCode ?></h1>
-                                <p class="display-6 mb-4"><?= $errorTitle ?></p>
-                                <div class="border-top border-bottom py-4 my-4">
-                                    <p class="fs-5 mb-0"><?= e($errorMessage) ?></p>
+                                <h1 class="text-5xl font-bold <?= $errorCode == 403 ? 'text-yellow-500' : 'text-red-500' ?> mb-2"><?= $errorCode ?></h1>
+                                <p class="text-4xl mb-4"><?= $errorTitle ?></p>
+                                <div class="border-t border-b py-4 my-4">
+                                    <p class="text-xl mb-0"><?= e($errorMessage) ?></p>
                                 </div>
                             </div>
                             
                             <!-- Actions -->
-                            <div class="d-flex flex-column flex-md-row gap-3 mt-4">
-                                <a href="<?= route('/') ?>" class="btn btn-primary px-4 py-2">
-                                    <i class="bi bi-house-door me-2"></i> Back to Home
+                            <div class="flex flex-col md:flex-row gap-3 mt-4">
+                                <a href="<?= route('/') ?>" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                    <i class="bi bi-house-door mr-2"></i> Back to Home
                                 </a>
-                                <button onclick="window.history.back()" class="btn btn-outline-secondary px-4 py-2">
-                                    <i class="bi bi-arrow-left me-2"></i> Go Back
+                                <button onclick="window.history.back()" class="border border-gray-500 text-gray-600 px-4 py-2 rounded hover:bg-gray-100">
+                                    <i class="bi bi-arrow-left mr-2"></i> Go Back
                                 </button>
                             </div>
                         </div>

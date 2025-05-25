@@ -27,6 +27,7 @@
 
         mounted() {
             this.loading = false;
+            this.$abort(403, 'You are not allowed to access this page.');
         }
     }).mount('#app');
 </script>
