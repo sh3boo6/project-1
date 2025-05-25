@@ -3,7 +3,17 @@
     <app-loading :visible="loading"></app-loading>
     <div class="container" v-cloak>
         <main class="py-4">
-            <pre dir="ltr" class="text-white bg-secondary rounded-3 p-3">{{ data }}</pre>
+            <div class="row justify-content-center">
+                <div class="col-8 col-md-6">
+                    <div class="card card-body text-center shadow-sm rounded-4">
+                        <div class="lead text-end">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum vel at iste atque consequatur quod veritatis voluptates earum, quaerat ducimus.</div>
+                        <hr>
+                        <div class="d-flex gap-2">
+                            <a href="<?= route('/users') ?>" role="button" class="btn btn-primary w-100">Users</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </div>
@@ -24,24 +34,11 @@
         },
 
         methods: {
-            async fetchData() {
-                try {
-                    const data = await fetch(this.api);
-                    const res = await data.json();
-                    this.data = res;
-                    console.log(res);
-                } catch (error) {
-                    console.error('Error fetching data:', error);
-                }
-            }
+
         },
 
         mounted() {
-            this.fetchData();
-            
-            setTimeout(() => {
-                this.loading = false;
-            }, 50); // Simulate loading for 1 second
+            this.loading = false;
         }
     }).mount('#app');
 </script>

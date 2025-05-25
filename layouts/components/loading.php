@@ -21,7 +21,6 @@
             }
         }
     };
-
 </script>
 
 <style>
@@ -32,6 +31,7 @@
         width: 100%;
         height: 100vh;
         background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+        transform: blur(10px);
         display: flex;
         justify-content: center;
         align-items: center;
